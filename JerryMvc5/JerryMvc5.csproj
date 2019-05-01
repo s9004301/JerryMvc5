@@ -47,6 +47,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.1.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -223,15 +226,38 @@
     <Compile Include="Migrations\201904260959219_AddPropertyToMovie.Designer.cs">
       <DependentUpon>201904260959219_AddPropertyToMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905010611243_ModifyMovieProp.cs" />
+    <Compile Include="Migrations\201905010611243_ModifyMovieProp.Designer.cs">
+      <DependentUpon>201905010611243_ModifyMovieProp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905010617092_AddGenreModelAndModifyMovieModel.cs" />
+    <Compile Include="Migrations\201905010617092_AddGenreModelAndModifyMovieModel.Designer.cs">
+      <DependentUpon>201905010617092_AddGenreModelAndModifyMovieModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905010620270_ModifyMovieModel.cs" />
+    <Compile Include="Migrations\201905010620270_ModifyMovieModel.Designer.cs">
+      <DependentUpon>201905010620270_ModifyMovieModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905010639290_AddRowsToGenres.cs" />
+    <Compile Include="Migrations\201905010639290_AddRowsToGenres.Designer.cs">
+      <DependentUpon>201905010639290_AddRowsToGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905011043424_ModifyMoviePropName.cs" />
+    <Compile Include="Migrations\201905011043424_ModifyMoviePropName.Designer.cs">
+      <DependentUpon>201905011043424_ModifyMoviePropName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewMdel\CustomerFormViewModel.cs" />
+    <Compile Include="ViewMdel\MovieFormViewModel.cs" />
     <Compile Include="ViewMdel\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -260,12 +286,12 @@
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-reboot.min.css.map" />
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -332,6 +358,9 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Movie\Details.cshtml" />
+    <Content Include="Views\Customers\CustomerForm.cshtml" />
+    <Content Include="Views\Movie\MovieForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -372,9 +401,21 @@
     <EmbeddedResource Include="Migrations\201904260959219_AddPropertyToMovie.resx">
       <DependentUpon>201904260959219_AddPropertyToMovie.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="Scripts\index.d.ts" />
+    <EmbeddedResource Include="Migrations\201905010611243_ModifyMovieProp.resx">
+      <DependentUpon>201905010611243_ModifyMovieProp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905010617092_AddGenreModelAndModifyMovieModel.resx">
+      <DependentUpon>201905010617092_AddGenreModelAndModifyMovieModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905010620270_ModifyMovieModel.resx">
+      <DependentUpon>201905010620270_ModifyMovieModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905010639290_AddRowsToGenres.resx">
+      <DependentUpon>201905010639290_AddRowsToGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905011043424_ModifyMoviePropName.resx">
+      <DependentUpon>201905011043424_ModifyMoviePropName.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
